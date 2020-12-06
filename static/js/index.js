@@ -1,19 +1,19 @@
 const video = document.getElementById('video');
 
-var socket = io.connect('https://floating-ocean-23631.herokuapp.com');
+var socket = io.connect('http://floating-ocean-23631.herokuapp.com');
 socket.on( 'connect', function() {
   console.log("SOCKET CONNECTED")
 })
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 Promise.all([
-  faceapi.loadFaceLandmarkModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadFaceRecognitionModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadTinyFaceDetectorModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadFaceLandmarkModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadFaceLandmarkTinyModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadFaceRecognitionModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
-  faceapi.loadFaceExpressionModel("https://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceLandmarkModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceRecognitionModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadTinyFaceDetectorModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceLandmarkModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceLandmarkTinyModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceRecognitionModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
+  faceapi.loadFaceExpressionModel("http://floating-ocean-23631.herokuapp.com/static/models/"),
 ])
   .then(startVideo)
   .catch(err => console.error(err));
